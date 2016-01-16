@@ -1,0 +1,24 @@
+<template name="dashboard">
+  <div class="row">
+    <ul class="collection">
+      {{#each training in trainings}}
+        {{#with training}}
+          {{> trainingSummaryTemplate}}
+        {{/with}}
+      {{/each}}
+   </ul>
+  </div>
+</template>
+
+<template name="trainingSummaryTemplate">
+<li class="collection-item">
+    <h3 class="header grey-text text-darken-2">
+      {{this.title}}
+    </h3>
+    <p class="grey-text text-lighten-1">{{this.date}}</p>
+    <div class="secondary-content chip">
+      View training
+    </div>
+    <p>{{this.description}}</p>
+</li>
+</template>
