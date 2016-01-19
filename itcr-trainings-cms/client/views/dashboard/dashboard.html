@@ -6,72 +6,73 @@
 </template>
 
 <template name="trainingsMaintenanceTable">
-  <table class="highlight">
-              <thead>
-                <tr>
-                    <th data-field="id">Training Name</th>
-                    <th data-field="name">Date given</th>
-                    <th data-field="price">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>
-                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
-                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
-                  </td>
-                </tr>
+  {{> reactiveTable collection=trainingsCollection class="highlight" settings=trainingTableSettings}}
+  <a class="create-training-button btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
 
-              </tbody>
-            </table>
+
+  <div id="editTrainingModal" class="modal">
+    {{> editTrainingModalBody}}
+  </div>
+
+  <div id="createTrainingModal" class="modal">
+    {{> createTrainingModalBody}}
+  </div>
+
+</template>
+
+
+<template name="editTrainingModalBody">
+  <div class="modal-content">
+    <h4>Edit Training</h4>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="training-title" type="text" />
+          <label for="training-title">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="training-description" class="materialize-textarea"></textarea>
+          <label for="training-description">Description</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <a class="update-training modal-action modal-close waves-effect waves-green btn-flat">Update</a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+  </div>
+</template>
+
+<template name="createTrainingModalBody">
+  <div class="modal-content">
+    <h4>Edit Training</h4>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="training-title" class="create-training-title" type="text" />
+          <label for="training-title">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea class="materialize-textarea create-training-description"></textarea>
+          <label>Description</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="training-youtubeid" class="create-training-youtubeid" type="text" />
+          <label for="training-youtubeid">Youtube ID</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="training-category" class="create-training-category" type="text" />
+          <label for="training-category">Category</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <a class="create-training modal-action modal-close waves-effect waves-green btn-flat">Create</a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+  </div>
 </template>
