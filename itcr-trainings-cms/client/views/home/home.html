@@ -1,9 +1,29 @@
 <template name="home">
-  <h1 class="header center grey-text text-darken-2">Home</h1>
-  <div class="row center">
-    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+  <div class="row">
+    <h1 class="header light green-text text-darken-2">Trainings</h1>
+    <br>
+    <ul>
+      {{#each training in trainings}}
+      {{#with training}}
+      {{> trainingSummaryTemplate}}
+      {{/with}}
+      {{/each}}
+    </ul>
   </div>
-  <div class="row center">
-    <a href="{{pathFor 'dashboard'}}" id="download-button" class="btn-large waves-effect waves-light grey darken-2">Go to dashboard</a>
-  </div>
+</template>
+
+<template name="trainingSummaryTemplate">
+  <li>
+    <div class="col s12">
+      <h3 class="header light green-text text-darken-2">
+        {{toTitleCase this.title}}
+      </h3>
+        <p class="grey-text text-lighten-1">{{this.date}}</p>
+        <p class="flow-text text-justify">
+          {{this.description}}
+        </p>
+        <a class="waves-effect waves-light btn right">View Training</a>
+    </div>
+  </li>
+  <br>
 </template>

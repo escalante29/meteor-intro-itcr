@@ -1,3 +1,5 @@
 Template.mainLayout.onRendered(()=> {
-  $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav({
+    closeOnClick: true
+  });
 })

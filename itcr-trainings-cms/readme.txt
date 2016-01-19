@@ -12,11 +12,12 @@ Meteor Training Steps/Agenda
 	/public // static assets like images and other media
 4. add necessary packages, we are going to use/need:
 	4.1 Iron Router => meteor add iron:router
-	4.2 Material Design UI => materialize:materialize
-	4.3 User Accounts => useraccounts:core
-	4.4 Login/Signup MD form styles => useraccounts:materialize
-	4.5 Mongol (debug DB) => msavin:mongol
+	4.2 Material Design UI => meteor add materialize:materialize
+	4.3 User Accounts => meteor add accounts-password
+	4.4 Login/Signup MD form styles => meteor add useraccounts:materialize
+	4.5 Mongol (debug DB) => meteor add msavin:mongol
 	4.6 Reactive Table => meteor add aslagle:reactive-table
+	4.7 User Accounts Iron Routing => meteor add useraccounts:iron-routing
 5. Configure layout
 	5.1 setup navbar/sidebar
 	5.2 setup main container

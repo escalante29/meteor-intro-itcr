@@ -1,24 +1,77 @@
 <template name="dashboard">
   <div class="row">
-    <ul class="collection">
-      {{#each training in trainings}}
-        {{#with training}}
-          {{> trainingSummaryTemplate}}
-        {{/with}}
-      {{/each}}
-   </ul>
+    <h1 class="header light green-text text-darken-2">Dashboard</h1>
+    {{> trainingsMaintenanceTable}}
   </div>
 </template>
 
-<template name="trainingSummaryTemplate">
-<li class="collection-item">
-    <h3 class="header grey-text text-darken-2">
-      {{this.title}}
-    </h3>
-    <p class="grey-text text-lighten-1">{{this.date}}</p>
-    <div class="secondary-content chip">
-      View training
-    </div>
-    <p>{{this.description}}</p>
-</li>
+<template name="trainingsMaintenanceTable">
+  <table class="highlight">
+              <thead>
+                <tr>
+                    <th data-field="id">Training Name</th>
+                    <th data-field="name">Date given</th>
+                    <th data-field="price">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>
+                    <a class="btn-floating waves-effect waves-light blue edit-training" title="Edit training"><i class="material-icons">create</i></a>
+                    <a class="btn-floating waves-effect waves-light red delete-training" title="Delete training"><i class="material-icons">remove</i></a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
 </template>

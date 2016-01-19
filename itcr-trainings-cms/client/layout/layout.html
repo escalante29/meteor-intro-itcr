@@ -15,19 +15,31 @@
       <a id="logo-container" href="#" class="brand-logo">
           <img src="./logo.png" alt="logo" />
       </a>
+
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        {{> atNavButton}}
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
+  <div class="container">
+      <div class="col s12">
+        <p class="right">
+          {{#if currentUser}}
+            Bienvenido {{toTitleCase currentUser.username}}
+          {{else}}
+            No has iniciado sesión
+          {{/if}}
+        </p>
+      </div>
       <br><br>
         {{> yield}}
       <br><br>
@@ -40,7 +52,6 @@
     <div class="section">
 
       <!--   Icon Section   -->
-
 
     </div>
     <br><br>
